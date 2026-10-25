@@ -1,0 +1,41 @@
+// Footer base and shared utilities
+.site-footer {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgb(52 64 84 / 16%);
+  color: #667085;
+  font-size: 12px;
+}
+
+.footer-brand {
+  color: var(--secondary-color);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer-brand span {
+  color: var(--main-color);
+}
+
+.site-footer > div {
+  display: flex;
+  gap: 18px;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

@@ -1,0 +1,74 @@
+// Hire section
+.hire-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 1.1fr;
+  align-items: center;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 34px 0 74px;
+  gap: 64px;
+  background: #F2F4F7 !important;
+}
+
+.hire-photo {
+  display: block;
+  width: 100%;
+  max-height: 603px !important;
+  width: 600px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.hire-copy h2 {
+  margin-bottom: 18px;
+  font-size: 64px;
+}
+
+.hire-copy > p {
+  max-width: 430px;
+  color: #667085;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.hire-stats {
+  display: flex;
+  gap: 60px;
+  margin: 26px 0;
+}
+
+.hire-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hire-stats strong {
+  color: var(--third-color);
+  font-size: 36px;
+}
+
+.hire-stats span {
+  color: #667085;
+  font-size: 20px;
+}
+
+.outline-button {
+  display: inline-flex;
+  min-width: 233px;
+  height: 108px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--third-color);
+  border-radius: 32px;
+  color: var(--third-color);
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 600;
+  &:hover{
+    background: #000;
+    color: white;
+    transition: 0.5s ease;
+
+  }
+}

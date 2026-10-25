@@ -1,0 +1,104 @@
+// Hover, reveal, ticker, and reduced-motion behavior
+.portfolio-card:hover {
+  transform: translateY(-5px);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 6s linear infinite;
+}
+
+.ticker-content {
+  display: block;
+  flex: 0 0 auto;
+  color: #171717;
+  white-space: nowrap;
+}
+
+.service-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html.motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.motion-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.motion-ready .hero-photo.reveal-on-scroll {
+  transform: translate(-50%, 30px);
+}
+
+html.motion-ready .hero-photo.reveal-on-scroll.is-visible {
+  transform: translate(-50%, 0);
+}
+
+html.motion-ready .hero-actions.reveal-on-scroll {
+  transform: translate(-50%, 24px);
+}
+
+html.motion-ready .hero-actions.reveal-on-scroll.is-visible {
+  transform: translate(-50%, 0);
+}
+
+html.motion-ready .service-card.reveal-on-scroll:hover.is-visible,
+html.motion-ready .service-card.reveal-on-scroll:focus-within.is-visible {
+  transform: translateY(-8px);
+}
+
+html.motion-ready .portfolio-card.reveal-on-scroll:hover.is-visible {
+  transform: translateY(-5px);
+}
+
+html.motion-ready .testimonial-card.reveal-on-scroll:hover.is-visible {
+  transform: translateY(-5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+  .service-card,
+  .service-image,
+  .round-link,
+  .portfolio-card,
+  .portfolio-image,
+  .testimonial-card,
+  .timeline-point,
+  .blog-image,
+  .footer-top .pill-button,
+  .footer-subscribe button,
+  html.motion-ready .reveal-on-scroll {
+    transition: none;
+  }
+  html.motion-ready .reveal-on-scroll,
+  html.motion-ready .hero-photo.reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+  html.motion-ready .hero-photo.reveal-on-scroll {
+    transform: translateX(-50%);
+  }
+  html.motion-ready .hero-actions.reveal-on-scroll {
+    transform: translateX(-50%);
+  }
+  .portfolio-card:hover,
+  .testimonial-card:hover {
+    transform: none;
+  }
+}

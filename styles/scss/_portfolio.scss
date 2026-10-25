@@ -1,0 +1,213 @@
+// Portfolio gallery and project details
+.portfolio {
+  padding: 50px 0 74px;
+  &-title{
+    font-size: 63px;
+  }
+}
+
+.portfolio-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 34px;
+  h2{
+    font-size: 64px;
+  }
+}
+
+.pill-button {
+  display: inline-flex;
+  min-width: 144px;
+  height: 66px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background: var(--main-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.portfolio-image {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 371px;
+  border-radius: 20px;
+  background: #e8e3df;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.035);
+}
+.link-port{
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+}
+
+.portfolio-card:hover .link-port,
+.portfolio-card:focus-within .link-port,
+.portfolio-card .link-port:hover,
+.portfolio-card .link-port:focus-visible {
+  color: #fff;
+  background: var(--main-color);
+  transform: none;
+}
+.portfolio-card::after {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 46%;
+  background: linear-gradient(transparent, rgb(0 0 0 / 48%));
+  content: "";
+  pointer-events: none;
+}
+
+.portfolio-card .round-link {
+  z-index: 4;
+  top: 8px;
+  right: 8px;
+  bottom: auto;
+  
+}
+
+.portfolio-card-name {
+  position: absolute;
+  z-index: 3;
+  right: 18px;
+  bottom: 14px;
+  left: 18px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 24%);
+  transition: opacity 0.25s ease;
+}
+
+.portfolio-card-info {
+  position: absolute;
+  z-index: 2;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  padding: 18px 22px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 20px;
+  background: rgb(20 20 20 / 56%);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.portfolio-card-info h3 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+}
+
+.portfolio-card-info p {
+  max-width: 540px;
+  margin-top: 14px;
+  color: rgb(255 255 255 / 88%);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.portfolio-card:hover .portfolio-card-info,
+.portfolio-card:focus-within .portfolio-card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-card:hover .portfolio-card-name,
+.portfolio-card:focus-within .portfolio-card-name {
+  opacity: 0;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 48px 0 48px;
+}
+
+.portfolio-tags span {
+  padding: 8px 16px;
+  border-radius: 22px;
+  background: var(--page-color);
+  font-size: 20px;
+  width: 193px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.project-description {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-description h3 {
+  color: var(--secondary-color);
+  font-size: 48px;
+}
+
+.project-description h3 a {
+  display: inline-flex;
+  width: 58px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--main-color);
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.project-description p {
+  margin-top: 12px;
+  color: #667085;
+  font-size: 20px;
+  line-height: 1.5;
+  width: 742px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

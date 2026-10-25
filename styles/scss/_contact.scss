@@ -1,0 +1,94 @@
+// Contact form and trust badges
+.contact {
+  position: relative;
+  padding: 66px 0 40px;
+  text-align: center;
+}
+
+.contact-decoration {
+  position: absolute;
+  top: 62px;
+  right: calc(50% - 220px);
+  width: 28px;
+  height: 34px;
+}
+
+.contact h2 {
+  font-size: 64px;
+}
+
+.contact-form {
+  display: flex;
+  max-width: 832px;
+  height: 86px;
+  align-items: center;
+  margin: 24px auto 14px;
+  padding: 6px;
+  border: 1px solid rgb(52 64 84 / 16%);
+  border-radius: 32px;
+  background: rgb(255 255 255 / 34%);
+
+}
+.email-icon {
+  display: flex;
+  width: 64px;
+  height: 58px;
+  flex: 0 0 58px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgb(253 133 58 / 16%);
+  color: var(--main-color);
+  img{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.contact-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 0 12px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  &::placeholder{
+    color: #000;
+  }
+}
+
+.contact-form button {
+  min-width: 126px;
+  height: 64px;
+  border-radius: 26px;
+  background: var(--main-color);
+  color: #fff;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contact-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.contact-trust span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-trust img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

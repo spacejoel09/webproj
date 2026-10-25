@@ -1,0 +1,49 @@
+// Animated services ticker
+.service-ticker {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: #fb6514;
+  border-radius: 10px;
+  height: 147px;
+  display: flex;
+  align-items: center;
+
+}
+.ticker-track{
+  transform: rotate(-1.6deg);
+  height: 63px;
+}
+.service-ticker .ticker-track {
+  width: max-content;
+  padding: 3px 0;
+  background: var(--page-color);
+  color: #171717;
+  font-size: 48px;
+  white-space: nowrap;
+}
+
+.service-ticker .ticker-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.service-ticker .ticker-star {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-ticker .ticker-star img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

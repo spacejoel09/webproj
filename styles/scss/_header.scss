@@ -1,0 +1,142 @@
+// Header
+.header {
+    margin-top: 40px;
+    display: flex;
+    padding: 0 7px;
+    align-items: center;
+    border-radius: 50px;
+    background: #000;
+    height: 70px;
+    width: 1300px;
+    justify-content: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.header__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header__button {
+    color: white;
+    height: 54px;
+    width: clamp(92px, 10.5vw, 140px);
+    border-radius: 60px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.header__button a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+.header__button:hover {
+    background: rgb(255 255 255 / 20%);
+}
+
+.header__button.active {
+  background: var(--main-color);
+}
+
+.header__wrap{
+  display: none;
+  h2{
+    font-weight: semibold;
+    font-size: 20px;
+  }
+}
+
+.header__wrap{
+  h3{
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.header__logo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: clamp(180px, 21.5vw, 307px);
+  justify-content: center;
+}
+
+.header__logo:hover{
+  position: relative;
+  .header__logo-img{
+    left: 4px;
+    position:relative
+  }
+  .header__wrap{
+    display: block;
+    transition-duration: 0.5s;
+  }
+  .header__logo-typo{
+  display: none;
+  }
+}
+
+.header__logo-img {
+    transition: transform 0.3s ease-in;
+}
+
+.header__logo-typo {
+  position: relative;
+  top: 2px;
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+        opacity 0.1s ease-in,
+        transform 0.1s ease-in;
+
+}
+
+.header__wrap {
+    opacity: 0;
+    transform: translateX(15px);
+    transition:
+        opacity 0.4s ease-in
+        transform 0.5s ease-in;
+}
+
+.header__logo:hover .header__logo-img {
+    transform: translateX(-8px);
+    transition-duration: 0.2s;
+}
+
+.header__logo:hover .header__logo-typo {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.header__logo:hover .header__wrap {
+    display: block;
+    animation: logoTextAppear 0.4s ease forwards;
+}
+
+@keyframes logoTextAppear {
+    from {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
