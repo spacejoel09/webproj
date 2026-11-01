@@ -1638,6 +1638,9 @@
     height: 90px;
     font-size: 42px;
   }
+  .project-description p {
+    width: 100%;
+  }
   .testimonial-list {
     gap: 14px;
   }
