@@ -6,27 +6,29 @@
 
 
 .blog-grid {
-  display: grid;
-  width: calc(100% + 18px);
-  margin-left: -9px;
-  grid-template-columns: repeat(3, minmax(0, 416px));
+  display: flex;
+  width: 100%;
+  margin-left: 0;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 35px;
+  gap: 35px 24px;
 }
 
 .blog-card {
   position: relative;
   display: flex;
+  flex: 1 1 calc((100% - 48px) / 3);
+  max-width: 416px;
   min-width: 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: 35px;
+  gap: clamp(20px, 2.4vw, 32px);
 }
 
 .blog-visual {
   position: relative;
-  width: 416px;
-  height: 432px;
+  width: 100%;
+  aspect-ratio: 416 / 432;
 }
 
 .blog-image {
@@ -79,9 +81,11 @@
   width: 114px;
   height: 114px;
   font-size: 64px;
+
 }
 
 .blog-card > p {
+  max-width: 100%;
   margin: 0;
   color: var(--secondary-color);
   font-size: 32px;

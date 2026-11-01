@@ -14,7 +14,20 @@
 <body>
   <div class="container">
     <header id='home' class='header' >
-        <ul class='header__list'>
+        <div class='header__mobile-logo' aria-hidden="true">
+          <div class='header__logo-img'>
+            <img src="./public/images/logo.svg" alt="">
+          </div>
+          <div class='header__logo-typo'>
+            <img src="./public/images/logo_typo.svg" alt="">
+          </div>
+        </div>
+        <button class="header__toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="header-navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class='header__list' id="header-navigation">
           <li >
             <button class='header__button active'>
               <a href="#home">Home</a>

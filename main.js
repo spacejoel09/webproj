@@ -1,9 +1,33 @@
 const buttons = document.querySelectorAll('.header__button')
+const header = document.querySelector('.header')
+const navigationToggle = document.querySelector('.header__toggle')
+
+const setNavigationOpen = isOpen => {
+	if (!header || !navigationToggle) return
+
+	header.classList.toggle('is-open', isOpen)
+	navigationToggle.setAttribute('aria-expanded', String(isOpen))
+	navigationToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation')
+}
+
+navigationToggle?.addEventListener('click', () => {
+	setNavigationOpen(navigationToggle.getAttribute('aria-expanded') !== 'true')
+})
+
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
 		buttons.forEach(btn => btn.classList.remove('active'))
 		button.classList.add('active')
+		setNavigationOpen(false)
 	})
+})
+
+document.addEventListener('keydown', event => {
+	if (event.key === 'Escape') setNavigationOpen(false)
+})
+
+window.addEventListener('resize', () => {
+	if (window.matchMedia('(min-width: 901px)').matches) setNavigationOpen(false)
 })
 
 const btns = document.querySelectorAll('.hero-action')

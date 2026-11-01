@@ -140,3 +140,137 @@
         transform: translateX(0);
     }
 }
+
+.header__mobile-logo,
+.header__toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .header {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 70px;
+    margin-top: 24px;
+    padding: 0 14px;
+    justify-content: space-between;
+  }
+
+  .header__mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header__mobile-logo .header__logo-img img {
+    display: block;
+    width: 44px;
+    height: 44px;
+  }
+
+  .header__mobile-logo .header__logo-typo img {
+    display: block;
+    width: 78px;
+    height: auto;
+  }
+
+  .header__toggle {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .header__toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .header__list {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    border-radius: 24px;
+    background: #000;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 16%);
+  }
+
+  .header.is-open .header__list {
+    display: flex;
+  }
+
+  .header__list > li {
+    width: 100%;
+  }
+
+  .header__list > .header__logo {
+    display: none;
+  }
+
+  .header__button {
+    display: flex;
+    width: 100%;
+    height: 48px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 18px;
+  }
+
+  .header__button a {
+    justify-content: flex-start;
+  }
+
+  .header__toggle:focus-visible,
+  .header__button a:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .header.is-open .header__toggle span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .header.is-open .header__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header.is-open .header__toggle span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 62px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .header__mobile-logo .header__logo-img img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__mobile-logo .header__logo-typo img {
+    width: 72px;
+  }
+}

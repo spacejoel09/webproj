@@ -16,12 +16,81 @@
   .footer-about {
     grid-column: 1 / -1;
   }
+  .hire-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    padding: 28px clamp(24px, 4vw, 40px) 36px;
+    gap: clamp(20px, 4vw, 36px);
+  }
+  .hire-photo {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    max-height: 380px;
+  }
+  .hire-copy h2 {
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.1;
+  }
+  .hire-copy > p {
+    font-size: 16px;
+  }
+  .hire-stats {
+    gap: clamp(16px, 3vw, 28px);
+  }
+  .hire-stats strong {
+    font-size: 28px;
+  }
+  .hire-stats span {
+    font-size: 16px;
+  }
+  .outline-button {
+    min-width: 170px;
+    height: 72px;
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 700px) {
   .hire-section {
+    grid-template-columns: minmax(0, 1fr);
     padding: 22px 22px 34px;
     border-radius: 26px;
+    gap: 20px;
+  }
+  .hire-photo {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+  .hire-copy {
+    width: 100%;
+    min-width: 0;
+  }
+  .hire-copy h2 {
+    font-size: clamp(27px, 8vw, 36px);
+    line-height: 1.15;
+  }
+  .hire-copy > p {
+    font-size: 15px;
+  }
+  .hire-stats {
+    justify-content: flex-start;
+    gap: clamp(24px, 9vw, 48px);
+  }
+  .hire-stats strong {
+    font-size: 26px;
+  }
+  .hire-stats span {
+    font-size: 14px;
+  }
+  .outline-button {
+    min-width: 150px;
+    height: 60px;
+    border-radius: 24px;
+    font-size: 20px;
   }
   .site-footer {
     width: calc(100% + 40px);

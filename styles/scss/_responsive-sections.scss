@@ -1,5 +1,49 @@
 // Section responsive layouts
 @media (max-width: 900px) {
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .section-title {
+    margin-bottom: 48px;
+    font-size: clamp(38px, 5.5vw, 50px) !important;
+  }
+  .timeline-row {
+    grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
+    gap: clamp(12px, 2.5vw, 24px);
+  }
+  .timeline-row > div:last-child {
+    margin-left: 0;
+  }
+  .timeline-row h3 {
+    font-size: clamp(20px, 3.2vw, 28px);
+    line-height: 1.2;
+  }
+  .timeline-row p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .timeline {
+    position: relative;
+  }
+  .timeline::before {
+    position: absolute;
+    top: 19px;
+    bottom: 19px;
+    left: 50%;
+    border-left: 1px dashed #344054;
+    content: "";
+    transform: translateX(-50%);
+  }
+  .timeline-point {
+    width: 38px;
+    height: 38px;
+  }
+  .timeline-row:not(:last-child) .timeline-point::after {
+    display: none;
+  }
+
   .intro-title-text {
     font-size: clamp(48px, 7vw, 64px);
   }
@@ -38,20 +82,46 @@
     width: 28%;
     height: auto;
   }
-  .round-link {
-    width: 48px;
-    height: 48px;
-    font-size: 26px;
-  }
+  .blog-card .round-link {
+      width: 90px;
+      height: 90px;
+      font-size: 42px;
+    }
+  
+
   .testimonial-list {
     gap: 14px;
   }
   .testimonial-card {
     flex-basis: min(612px, calc(100vw - 48px));
   }
+  .blog-grid {
+    justify-content: flex-start;
+    gap: 28px 20px;
+  }
+  .blog-card {
+    flex: 0 1 calc(50% - 12px);
+   
+  }
+   
+  .blog-card:last-child:nth-child(odd) {
+    margin-inline: auto;
+  }
+  .blog-title h2 {
+    font-size: clamp(36px, 5.5vw, 48px) !important;
+  }
+  .blog-meta {
+    gap: 8px 12px;
+    font-size: clamp(13px, 1.8vw, 16px);
+  }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
   .intro {
     height: 650px;
   }
@@ -72,6 +142,7 @@
   .intro-btm-center,
   .hero-photo {
     height: 390px;
+    width: min(835px, 114%);
   }
   .intro-btm-text {
     top: 28px;
@@ -151,27 +222,53 @@
   }
   .section-title {
     margin-bottom: 34px;
+    font-size: clamp(27px, 8vw, 34px) !important;
+    line-height: 1.12;
   }
   .timeline {
-    gap: 24px;
+    position: relative;
+    gap: 22px;
+  }
+  .timeline::before {
+    top: 10px;
+    right: auto;
+    bottom: 10px;
+    left: 11px;
+    display: block;
+    transform: none;
   }
   .timeline-row {
-    grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr);
-    gap: 10px;
+    position: relative;
+    grid-template-columns: 22px minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 6px;
+  }
+  .timeline-row > div:first-child {
+    grid-column: 2;
+  }
+  .timeline-row .timeline-point {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+  .timeline-row > div:last-child {
+    grid-column: 2;
+    margin-left: 0;
   }
   .timeline-row h3 {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.25;
   }
   .timeline-row p {
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.4;
   }
   .timeline-point {
     width: 18px;
     height: 18px;
   }
   .timeline-row:not(:last-child) .timeline-point::after {
-    top: 18px;
-    height: 42px;
+    display: none;
   }
   .hire-section {
     grid-template-columns: 1fr;
@@ -213,7 +310,8 @@
   }
   .portfolio-tags span {
     padding: 7px 10px;
-    font-size: 10px;
+    font-size: 20px;
+    width: 100%;
   }
   .project-description h3 {
     font-size: 20px;
@@ -221,28 +319,37 @@
   .blog-grid {
     width: 100%;
     margin-left: 0;
-    grid-template-columns: repeat(2, minmax(0, 416px));
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 28px 20px;
   }
   .blog-card {
-    gap: 24px;
+    flex-basis: calc(50% - 10px);
+    gap: 22px;
+  }
+  .blog-visual {
+    height: auto;
+  }
+  .blog-card {
+    max-width: 416px;
   }
   .blog-card .round-link {
-    width: 88px;
-    height: 88px;
-    font-size: 52px;
+    width: 100px;
+    height: 100px;
+    font-size: 42px;
   }
   .blog-category {
-    width: 150px;
-    height: 48px;
-    font-size: 18px;
+    width: auto;
+    max-width: 100%;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 16px;
   }
   .blog-meta {
-    gap: 16px;
-    font-size: 15px;
+    gap: 10px 16px;
+    font-size: 14px;
   }
   .blog-card > p {
-    font-size: 26px;
+    font-size: 22px;
   }
   .testimonials {
     padding-top: 42px;
@@ -284,8 +391,25 @@
   .contact-form {
     height: 54px;
   }
+  .email-icon {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+  .email-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  .contact-form input {
+    padding: 0 8px;
+    font-size: clamp(14px, 4vw, 16px);
+  }
   .contact-form button {
-    min-width: 76px;
+    min-width: 64px;
+    height: 42px;
+    flex: 0 0 64px;
+    border-radius: 22px;
+    font-size: 16px;
   }
   .contact-trust {
     gap: 10px 18px;
@@ -301,24 +425,24 @@
   .blog {
     padding: 42px 0 54px;
   }
+  .blog-title h2 {
+    font-size: clamp(28px, 8vw, 40px) !important;
+  }
   .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    justify-content: center;
+    gap: 28px;
   }
   .blog-card {
-    gap: 20px;
-  }
-  .blog-card .round-link {
-    width: 76px;
-    height: 76px;
-    font-size: 46px;
+    flex: 0 1 100%;
+    width: 100%;
+    gap: 18px;
   }
   .blog-meta {
-    gap: 20px;
-    font-size: 14px;
+    gap: 8px 16px;
+    font-size: 13px;
   }
   .blog-card > p {
-    font-size: 24px;
+    font-size: 20px;
   }
   .site-footer {
     min-height: 140px;
@@ -331,6 +455,55 @@
     width: 100%;
     justify-content: center;
     gap: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .blog {
+    padding: 32px 0 42px;
+  }
+  .blog-title {
+    gap: 10px;
+  }
+  .blog-title h2 {
+    font-size: 25px !important;
+  }
+  .blog-title .pill-button {
+    min-width: 70px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+  .blog-grid {
+    gap: 24px;
+  }
+  .blog-card {
+    gap: 14px;
+  }
+  .blog-card .round-link {
+    width: 58px;
+    height: 58px;
+    font-size: 36px;
+  }
+  .blog-category {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+  .blog-meta {
+    gap: 6px 12px;
+    font-size: 11px;
+  }
+  .blog-meta span {
+    padding-left: 11px;
+  }
+  .blog-meta span::before {
+    width: 6px;
+    height: 6px;
+  }
+  .blog-card > p {
+    font-size: 17px;
+    line-height: 1.35;
   }
 }
 
