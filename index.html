@@ -10,6 +10,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   emailjs.init({
+     publicKey: "pdtOnCMkwt3wlj3qc",
+   });
+</script>
 </head>
 <body>
   <div class="container">
@@ -212,6 +218,7 @@
           <input id="contact-email" name="email" type="email" placeholder="Enter Email Address" autocomplete="email" required>
           <button type="submit">Send</button>
         </form>
+        <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
         <div class="contact-trust">
           <span><img src="./public/images/letsdiscuss_star.svg" alt=""> 4.9/5 Average Ratings</span>
           <span><img src="./public/images/award.svg" alt=""> 25+ Winning Awards</span>
@@ -351,6 +358,6 @@
       </div>
     </footer>
   </div>
-  <script src='./main.js'></script>
+  <script defer src='./main.js'></script>
 </body>
 </html>

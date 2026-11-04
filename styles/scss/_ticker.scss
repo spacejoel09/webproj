@@ -10,10 +10,10 @@
   height: 147px;
   display: flex;
   align-items: center;
+  padding-left: inherit;
 
 }
 .ticker-track{
-  transform: rotate(-1.6deg);
   height: 63px;
 }
 .service-ticker .ticker-track {

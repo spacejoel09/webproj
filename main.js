@@ -37,7 +37,7 @@ btns.forEach(button => {
 		button.classList.add('active')
 	})
 })
-
+const templateID = 'template_w9wb0ff'
 document.querySelectorAll('.contact-form, .footer-subscribe').forEach(form => {
 	form.addEventListener('submit', event => {
 		event.preventDefault()
@@ -46,7 +46,15 @@ document.querySelectorAll('.contact-form, .footer-subscribe').forEach(form => {
 		const status = document.getElementById(
 			form.classList.contains('contact-form') ? 'contact-status' : 'footer-status'
 		)
-		status.textContent = 'Email sending is not available yet because no mail service is connected.'
+		status.textContent = "Sending..."
+		emailjs.sendForm('service_wkq3l17', templateID, form).then(() => {
+
+			status.textContent = 'Thank you for your submission!'
+			form.reset()
+		}).catch((e) => {
+			status.textContent = 'OPS! SOMETHING WENT WRONG!'
+			console.error(e)
+		});
 	})
 })
 

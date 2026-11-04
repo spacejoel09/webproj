@@ -6,7 +6,7 @@
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 6s linear infinite;
+  animation: ticker-scroll 10s linear infinite;
 }
 
 .ticker-content {
@@ -16,9 +16,7 @@
   white-space: nowrap;
 }
 
-.service-ticker:hover .ticker-track {
-  animation-play-state: paused;
-}
+
 
 @keyframes ticker-scroll {
   to {

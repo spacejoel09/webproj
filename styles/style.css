@@ -1368,10 +1368,10 @@
   height: 147px;
   display: flex;
   align-items: center;
+  padding-left: inherit;
 }
 
 .ticker-track {
-  transform: rotate(-1.6deg);
   height: 63px;
 }
 
@@ -2400,7 +2400,7 @@ html {
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 6s linear infinite;
+  animation: ticker-scroll 10s linear infinite;
 }
 
 .ticker-content {
@@ -2408,10 +2408,6 @@ html {
   flex: 0 0 auto;
   color: #171717;
   white-space: nowrap;
-}
-
-.service-ticker:hover .ticker-track {
-  animation-play-state: paused;
 }
 
 @keyframes ticker-scroll {
