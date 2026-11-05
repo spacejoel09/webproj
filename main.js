@@ -2,6 +2,8 @@ const buttons = document.querySelectorAll('.header__button')
 const header = document.querySelector('.header')
 const navigationToggle = document.querySelector('.header__toggle')
 
+
+//burgermenu
 const setNavigationOpen = isOpen => {
 	if (!header || !navigationToggle) return
 
@@ -37,6 +39,8 @@ btns.forEach(button => {
 		button.classList.add('active')
 	})
 })
+
+//emailjs
 const templateID = 'template_w9wb0ff'
 document.querySelectorAll('.contact-form, .footer-subscribe').forEach(form => {
 	form.addEventListener('submit', event => {
@@ -57,7 +61,7 @@ document.querySelectorAll('.contact-form, .footer-subscribe').forEach(form => {
 		});
 	})
 })
-
+// animatia!
 const motionTargets = document.querySelectorAll([
 	'.intro-top-hi',
 	'.intro-title',
@@ -106,3 +110,28 @@ if ('IntersectionObserver' in window) {
 
 	motionTargets.forEach(element => revealObserver.observe(element))
 }
+
+
+
+// BACK TO TOP !!!!!!!!!
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+
+window.onscroll = function() {
+    const isDesktop = window.matchMedia('(max-width: 901px)').matches;
+    const scrolled = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
+
+    if (isDesktop && scrolled) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+
+backToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
