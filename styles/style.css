@@ -334,7 +334,8 @@
   z-index: 1;
   bottom: 0;
   left: 50%;
-  width: min(835px, 110%);
+  height: min(800px, 109%);
+  width: min(835px, 100%);
   object-fit: contain;
   object-position: center bottom;
   transform: translateX(-50%);
@@ -855,8 +856,8 @@
 .hire-photo {
   display: block;
   width: 100%;
-  max-height: 603px !important;
-  width: 600px;
+  max-width: 600px;
+  height: auto;
   object-fit: contain;
   object-position: center bottom;
 }
@@ -2559,6 +2560,15 @@ html.motion-ready .testimonial-card.reveal-on-scroll:hover.is-visible {
     min-width: 170px;
     height: 72px;
     font-size: 22px;
+  }
+  .hire-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hire-photo {
+    display: none;
+    width: min(100%, 420px);
+    max-height: 380px;
+    justify-self: center;
   }
 }
 @media (max-width: 700px) {

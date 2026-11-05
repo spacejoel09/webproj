@@ -86,7 +86,8 @@
   z-index: 1;
   bottom: 0;
   left: 50%;
-  width: min(835px, 110%);
+  height:min(800px, 109%);
+  width: min(835px, 100%);
   object-fit: contain;
   object-position: center bottom;
   transform: translateX(-50%);

@@ -48,6 +48,16 @@
     height: 72px;
     font-size: 22px;
   }
+
+  .hire-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hire-photo {
+    display: none;
+    width: min(100%, 420px);
+    max-height: 380px;
+    justify-self: center;
+  }
 }
 
 @media (max-width: 700px) {
